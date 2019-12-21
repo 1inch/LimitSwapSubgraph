@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: mainnet
+    source:
+      address: "0x29d9F033624fAA321c94319F8bE56cB6DdAf75A9"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.2
+      language: wasm/assemblyscript
+      entities:
+        - LimitOrderUpdated
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: LimitOrderUpdated(indexed address,indexed address,indexed address,indexed address,uint256,uint256,uint256,uint256)
+          handler: handleLimitOrderUpdated
+      file: ./src/mapping.ts
