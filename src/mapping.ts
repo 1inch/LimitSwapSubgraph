@@ -2,6 +2,13 @@ import { BigInt, Bytes, ByteArray, crypto } from "@graphprotocol/graph-ts"
 import { Contract, LimitOrderUpdated } from "../generated/Contract/Contract"
 import { LimitOrder } from "../generated/schema"
 
+function padHex(hex: string, length: i32): string {
+  if (hex.startsWith('0x')) {
+    hex = hex.substr(2);
+  }
+  return hex.padStart(length, '0');
+}
+
 function hashOfLimitOrder(
   makerAddress: Bytes,
   takerAddress: Bytes,
@@ -9,19 +16,17 @@ function hashOfLimitOrder(
   takerAsset: Bytes,
   makerAmount: BigInt,
   takerAmount: BigInt,
-  expiration: BigInt,
-  remainingAmount: BigInt
+  expiration: BigInt
 ): ByteArray {
   return crypto.keccak256(
     ByteArray.fromHexString(
-      makerAddress.toHex().substr(2) +
-      takerAddress.toHex().substr(2) +
-      makerAsset.toHex().substr(2) +
-      takerAsset.toHex().substr(2) +
-      makerAmount.toHex().substr(2) +
-      takerAmount.toHex().substr(2) +
-      expiration.toHex().substr(2) +
-      remainingAmount.toHex().substr(2)
+      padHex(makerAddress.toHex(), 40) +
+      padHex(takerAddress.toHex().substr(2), 40) +
+      padHex(makerAsset.toHex().substr(2), 40) +
+      padHex(takerAsset.toHex().substr(2), 40) +
+      padHex(makerAmount.toHex().substr(2), 64) +
+      padHex(takerAmount.toHex().substr(2), 64) +
+      padHex(expiration.toHex().substr(2), 64)
     )
   );
 }
@@ -34,8 +39,7 @@ export function handleLimitOrderUpdated(event: LimitOrderUpdated): void {
     event.params.takerAsset,
     event.params.makerAmount,
     event.params.takerAmount,
-    event.params.expiration,
-    event.params.remaining,
+    event.params.expiration
   ).toHex();
 
   // Entities can be loaded from the store using a string ID; this ID
