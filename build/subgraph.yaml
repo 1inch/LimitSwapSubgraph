@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Contract
@@ -16,9 +16,10 @@ dataSources:
         - LimitOrderUpdated
       abis:
         - name: Contract
-          file: ./abis/Contract.json
+          file: Contract/abis/Contract.json
       eventHandlers:
-        - event: LimitOrderUpdated(indexed address,indexed address,indexed address,indexed address,uint256,uint256,uint256,uint256)
+        - event: LimitOrderUpdated(indexed address,indexed address,indexed address,indexed
+            address,uint256,uint256,uint256,uint256)
           topic0: "0x000000000000000000000000083fc10ce7e97cafbae0fe332a9c4384c5f54e45"
           handler: handleLimitOrderUpdated
-      file: ./src/mapping.ts
+      file: Contract/Contract.wasm
