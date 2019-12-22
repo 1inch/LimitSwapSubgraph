@@ -6,7 +6,7 @@ dataSources:
     name: Contract
     network: mainnet
     source:
-      address: "0x29d9F033624fAA321c94319F8bE56cB6DdAf75A9"
+      address: "0x45F05B5BA0cbC05801426EA0366D987C35033768"
       abi: Contract
     mapping:
       kind: ethereum/events
@@ -18,7 +18,6 @@ dataSources:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: LimitOrderUpdated(indexed address,indexed address,indexed address,indexed address,uint256,uint256,uint256,uint256)
-          topic0: "0x000000000000000000000000083fc10ce7e97cafbae0fe332a9c4384c5f54e45"
+        - event: LimitOrderUpdated(indexed address,address,indexed address,indexed address,uint256,uint256,uint256,uint256)
           handler: handleLimitOrderUpdated
       file: ./src/mapping.ts

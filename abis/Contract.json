@@ -1,6 +1,6 @@
 [
   {
-    "anonymous": true,
+    "anonymous": false,
     "inputs": [
       {
         "indexed": true,
@@ -9,7 +9,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "address",
         "name": "takerAddress",
         "type": "address"
@@ -57,8 +57,16 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "address", "name": "makerAddress", "type": "address" },
-      { "internalType": "address", "name": "takerAddress", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "makerAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "takerAddress",
+        "type": "address"
+      },
       {
         "internalType": "contract IERC20",
         "name": "makerAsset",
@@ -69,12 +77,30 @@
         "name": "takerAsset",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "makerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "takerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "expiration", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "makerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      }
     ],
     "name": "available",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -82,10 +108,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "address", "name": "user", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
     ],
     "name": "balanceOf",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -93,7 +129,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "takerAddress", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "takerAddress",
+        "type": "address"
+      },
       {
         "internalType": "contract IERC20",
         "name": "makerAsset",
@@ -104,9 +144,21 @@
         "name": "takerAsset",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "makerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "takerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "expiration", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "makerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      }
     ],
     "name": "cancelOrder",
     "outputs": [],
@@ -126,7 +178,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "takerAddress", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "takerAddress",
+        "type": "address"
+      },
       {
         "internalType": "contract IERC20",
         "name": "makerAsset",
@@ -137,9 +193,21 @@
         "name": "takerAsset",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "makerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "takerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "expiration", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "makerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      }
     ],
     "name": "makeOrder",
     "outputs": [],
@@ -149,9 +217,21 @@
   },
   {
     "constant": true,
-    "inputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "name": "remainings",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -164,7 +244,11 @@
         "name": "makerAddress",
         "type": "address"
       },
-      { "internalType": "address", "name": "takerAddress", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "takerAddress",
+        "type": "address"
+      },
       {
         "internalType": "contract IERC20",
         "name": "makerAsset",
@@ -175,11 +259,31 @@
         "name": "takerAsset",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "makerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "takerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "expiration", "type": "uint256" },
-      { "internalType": "uint256", "name": "takingAmount", "type": "uint256" },
-      { "internalType": "bool", "name": "interactive", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "makerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takingAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "interactive",
+        "type": "bool"
+      }
     ],
     "name": "takeOrder",
     "outputs": [],
@@ -195,7 +299,11 @@
         "name": "makerAddress",
         "type": "address"
       },
-      { "internalType": "address", "name": "takerAddress", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "takerAddress",
+        "type": "address"
+      },
       {
         "internalType": "contract IERC20",
         "name": "makerAsset",
@@ -206,11 +314,31 @@
         "name": "takerAsset",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "makerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "takerAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "expiration", "type": "uint256" },
-      { "internalType": "uint256", "name": "takingAmount", "type": "uint256" },
-      { "internalType": "bool", "name": "interactive", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "makerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takerAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takingAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "interactive",
+        "type": "bool"
+      }
     ],
     "name": "takeOrderAvailable",
     "outputs": [],
@@ -221,7 +349,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "uint256", "name": "amount", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
     ],
     "name": "withdraw",
     "outputs": [],

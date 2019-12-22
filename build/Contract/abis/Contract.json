@@ -1,6 +1,6 @@
 [
   {
-    "anonymous": true,
+    "anonymous": false,
     "inputs": [
       {
         "indexed": true,
@@ -9,7 +9,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "address",
         "name": "takerAddress",
         "type": "address"
